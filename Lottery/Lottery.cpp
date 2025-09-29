@@ -1,15 +1,7 @@
 ﻿// Lottery.cpp : Defines the entry point for the application.
 //
 
-#include <iostream>
-#include <vector>
-#include <random>
-#include <algorithm>
-#include <numeric>
-#include <set>
-#include <string>
-
-using namespace std;
+#include "Lottery.h"
 
 // Helper function to convert a vector of numbers to a string for uniqueness
 std::string numbers_to_string(const std::vector<int>& numbers) {
