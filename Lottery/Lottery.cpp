@@ -45,5 +45,7 @@ int main()
     }
 
     std::cin.get();
+	std::cout << "Press Enter to exit...";
+    std::cin.get(); 
     return 0;
 }
