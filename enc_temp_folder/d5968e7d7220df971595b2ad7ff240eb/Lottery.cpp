@@ -27,7 +27,6 @@ int main()
     constexpr int max_value = 40;
     int num_rows = 0; // Number of rows to generate
 
-    std::cout << "Hello!" << endL;
     std::cout << "Enter number of lottery rows to generate: ";
     std::cin >> num_rows;
 
