@@ -14,30 +14,36 @@ int main()
     constexpr int num_numbers = 7;
     constexpr int min_value = 1;
     constexpr int max_value = 40;
+    int num_rows = 0; // Number of rows to generate
 
-    // Create a vector with all possible numbers
-    std::vector<int> numbers(max_value);
-    std::iota(numbers.begin(), numbers.end(), min_value);
+    std::cout << "Enter number of lottery rows to generate: ";
+    std::cin >> num_rows;
 
     // Set up random device and generator
     std::random_device rd;
     std::mt19937 gen(rd());
 
-    // Shuffle the numbers
-    std::shuffle(numbers.begin(), numbers.end(), gen);
+    for (int row = 1; row <= num_rows; ++row) {
+        // Create a vector with all possible numbers
+        std::vector<int> numbers(max_value);
+        std::iota(numbers.begin(), numbers.end(), min_value);
 
-    // Select the first 7 numbers
-    std::vector<int> lottery_numbers(numbers.begin(), numbers.begin() + num_numbers);
+        // Shuffle the numbers
+        std::shuffle(numbers.begin(), numbers.end(), gen);
 
-    // Sort for display
-    std::sort(lottery_numbers.begin(), lottery_numbers.end());
+        // Select the first 7 numbers
+        std::vector<int> lottery_numbers(numbers.begin(), numbers.begin() + num_numbers);
 
-    std::cout << "Finnish Lottery Numbers: ";
-    for (int n : lottery_numbers) {
-        std::cout << n << " ";
+        // Sort for display
+        std::sort(lottery_numbers.begin(), lottery_numbers.end());
+
+        std::cout << "Row " << row << ": ";
+        for (int n : lottery_numbers) {
+            std::cout << n << " ";
+        }
+        std::cout << std::endl;
     }
-    std::cout << std::endl;
-	std::cin.get();
 
+    std::cin.get();
     return 0;
 }
